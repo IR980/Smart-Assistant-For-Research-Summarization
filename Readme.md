@@ -65,10 +65,10 @@ streamlit run app.py
 ## 📂 Project Structure
 
 ```
-smart-research-assistant/
+smart-assistant-for-research-summarization-/
 ├── README.md
 ├── requirements.txt
-├── postman/
+├── utils/
 │   └── smart-assistant.postman_collection.json
 ├── app/
 │   ├── main.py
@@ -117,5 +117,8 @@ smart-research-assistant/
 
 ## 🧑‍💻 Author
 
-**Faisal Naseer**  
+**Irshad Alam**  
 [GitHub](https://github.com/IR980)
+
+
+Built with ❤️ using Gemini + Streamlit By Irshad
