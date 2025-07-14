@@ -1,11 +1,15 @@
 
-# 🧠 Smart Research Assistant
+# 🧠 Smart Assistant for Research Summarization
 
 A GenAI-powered assistant that reads uploaded documents and helps users:
 - Answer complex, logic-based questions
 - Summarize research material
 - Evaluate user comprehension
 - Justify all answers with references from source
+- A powerful, interactive assistant that helps you summarize, query, and test
+- your understanding of research documents (PDF/TXT)
+- using advanced language models and semantic search.
+-  Built with Streamlit for an intuitive dashboard experience.
 
 ---
 
@@ -18,16 +22,19 @@ https://smartassistantirshad.streamlit.app/
 ## 🎥 Demo Photo/Video
 
 ---
+<img width="1902" height="1022" alt="smart-1" src="https://github.com/user-attachments/assets/f57dc272-36b3-4935-9ca4-0525050d8c40" />
 
-<img width="1440" height="829" alt="Demo Photo1" src="https://github.com/user-attachments/assets/4791994a-9c0b-49d7-b3b6-5593ad43face" />
-
----
-
-<img width="1440" height="829" alt="Demo Photo2" src="https://github.com/user-attachments/assets/880061c2-db0b-4e9c-8ea5-56aebf519dc4" />
 
 ---
 
-📹 Loom: https://www.loom.com/share/7428481428be46c683076394076ecd04?sid=7f527cb6-3644-4ef9-b233-a62d18ffc192
+<img width="1912" height="1030" alt="smart-2" src="https://github.com/user-attachments/assets/ecf6fd9c-4e9c-43af-bdc5-687309cce1b3" />
+
+---
+<img width="1907" height="1022" alt="smart-3" src="https://github.com/user-attachments/assets/e2c5ef92-d086-4246-809b-f6bf14cb97a7" />
+
+---
+
+📹 Loom: https://www.loom.com/share/31957017e6bb4e25acc374133c3927db
 
 ---
 
@@ -36,8 +43,9 @@ https://smartassistantirshad.streamlit.app/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/IR980/smart-assistant-for-research-summarization.git
-cd smart-assistant-for-research-summarization
+git clone https://github.com/IR980/smart-assistant-research-summarization.git
+cd smart-assistant-research-summarization
+
 ```
 
 ### 2. Create Virtual Environment
@@ -57,25 +65,39 @@ pip install -r requirements.txt
 ### 4. Run the App
 
 ```bash
-streamlit run app.py
-```
+streamlit run src/app.py
 
+```
+### 4. Set up API Key
+# Create a .env file:
+```
+OPENAI_API_KEY=your_openai_key_here
+
+```
 ---
 
 ## 📂 Project Structure
 
 ```
-smart-assistant-for-research-summarization-/
-├── README.md
-├── requirements.txt
+src/
+│
+├── app.py                        # Main Streamlit app
+├── challenge/
+│   └── question_generator.py     # Challenge mode logic
+├── embedding/
+│   ├── embedder.py               # Embedding functions
+│   └── vector_store.py           # Vector search
 ├── utils/
-│   └── smart-assistant.postman_collection.json
-├── app/
-│   ├── main.py
-│   ├── logic.py
-│   ├── utils.py
-├── templates/
-  └── index.html
+│   └── helpers.py                # Utilities (chunking, highlighting, etc.)
+├── document_processing/
+│   ├── pdf_parser.py             # PDF text extraction
+│   └── text_extractor.py         # TXT extraction
+├── qa/
+│   ├── question_answering.py     # LLM Q&A logic
+│   └── openai_client.py          # OpenAI client
+└── evaluator/
+    └── answer_evaluator.py       # Answer evaluation logic
+
 ```
 
 ---
@@ -84,16 +106,23 @@ smart-assistant-for-research-summarization-/
 
 ### Modules:
 
-- **main.py** – User interface (Streamlit) and backend interaction
-- **logic.py** – Core logic, LLM interaction, document processing
-- **utils.py** – Helper functions for parsing, prompting, evaluation
+
+ - **main.py** – User interface (Streamlit) and backend interaction
+ - **logic.py** - Core logic and LLM/document processing
+ - **utils.py** - Helper and utility functions
 
 ### Flow:
 
-1. Upload PDF or document file
-2. App parses and indexes content
-3. User asks questions
-4. Model answers + explains reasoning using references
+1. Launches the Streamlit app.
+2. Manages file upload, mode selection, and user inputs.
+3. Calls functions from logic.py and displays results.
+4. Handles text extraction from PDF/TXT.
+5. Splits text into chunks and generates embeddings.
+6. Performs semantic search and context retrieval.
+7. Interfaces with the LLM for Q&A, summarization, and challenge generation
+8. Text chunking and formatting utilities.
+9. Prompt construction helpers.
+10. Answer evaluation and scoring functions.
 
 ---
 
@@ -101,9 +130,10 @@ smart-assistant-for-research-summarization-/
 
 - Python 3.10+
 - Streamlit
-- OpenAI / Perplexity API
-- LangChain (optional)
-- PyMuPDF or pdfminer.six (PDF parsing)
+- sentence-transformers
+- PyMuPDF (pip install pymupdf)
+- penAI Python SDK
+- See requirements.txt for full list
 
 ---
 
@@ -111,7 +141,7 @@ smart-assistant-for-research-summarization-/
 
 
 
-📹 Loom: [https://www.loom.com/share/your-demo-link](https://www.loom.com/share/7428481428be46c683076394076ecd04?sid=bec0108d-2ef9-4b83-85c0-7c351c55aaed)
+📹 Loom: [https://www.loom.com/share/your-demo-link](https://www.loom.com/share/31957017e6bb4e25acc374133c3927db)
 
 ---
 
