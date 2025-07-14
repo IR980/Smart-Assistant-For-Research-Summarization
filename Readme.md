@@ -11,7 +11,7 @@ A GenAI-powered assistant that reads uploaded documents and helps users:
 
 ## 🌐 Live Link
 
-https://smartassistant07.streamlit.app/
+https://smartassistantirshad.streamlit.app/
 
 ---
 
@@ -36,15 +36,16 @@ https://smartassistant07.streamlit.app/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/xtfaisal07/smart-research-assistant.git
-cd smart-research-assistant
+git clone https://github.com/IR980/smart-assistant-for-research-summarization.git
+cd smart-assistant-for-research-summarization
 ```
 
 ### 2. Create Virtual Environment
 
 ```bash
 python3 -m venv venv
-source venv/bin/activate      # For Windows: venv\Scripts\activate
+venv/Scripts/activate
+      
 ```
 
 ### 3. Install Dependencies
@@ -56,7 +57,7 @@ pip install -r requirements.txt
 ### 4. Run the App
 
 ```bash
-streamlit run app/main.py
+streamlit run app.py
 ```
 
 ---
@@ -117,4 +118,4 @@ smart-research-assistant/
 ## 🧑‍💻 Author
 
 **Faisal Naseer**  
-[GitHub](https://github.com/xtfaisal07)
+[GitHub](https://github.com/IR980)
